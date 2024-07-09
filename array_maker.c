@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	list_lenght(t_s *a)
+int	list_length(t_s *a)
 {
 	t_s	*tmp;
 	int	i;

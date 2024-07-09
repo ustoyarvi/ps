@@ -38,19 +38,19 @@ void	pb(t_s **a, t_s **b);
 ////////algorithms2///////
 void	pa(t_s **a, t_s **b);
 void	rrb_rra(t_s **b, int how_many_times, int num);
+void	sa(t_s **a);
 ///////butterfly/////////
 void	butterfly_sort(t_s **a, t_s **b);
 int		magic(int n);
 void	back_to_a(t_s **a, t_s **b, int max_index);
 void	rotate_up_or_down(t_s **b, int max_index);
-//////corner_case////////
-int		corner_case(t_s *a, int index);
+//////cases////////
+int		already_sorted(t_s *a, int index);
 int		if_close_to_sorted(t_s *a, int max_index, int min_index, int len);
 t_s		*clone_struct(t_s *a);
 t_s		*find_min(t_s *tmp, int min_index);
 //////almost_sorted//////
 void	almost_sorted(t_s **a);
-void	sa(t_s **a);
 /////low_num////////////
 void	low_num(t_s **a, t_s **b, int max_index);
 void	sort_5(t_s **a, t_s **b, int max_index);

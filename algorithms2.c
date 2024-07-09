@@ -45,7 +45,7 @@ void	rrb_rra(t_s **b, int how_many_times, int num)
 	}
 }
 
-void	sa(t_s ***a)
+void	sa(t_s **a)
 {
 	t_s	*first;
 	t_s	*second;

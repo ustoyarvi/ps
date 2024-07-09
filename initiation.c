@@ -52,7 +52,7 @@ int	try_add(char *current_str, t_s **a)
 		if (uniq(num, *a))
 		{
 			if (overflow)
-				exit (1, && write(2, "Error\n", 6));
+				exit (1 && write(2, "Error\n", 6));
 			if (!overflow)
 			{
 				new_node = ft_lstnew(num);

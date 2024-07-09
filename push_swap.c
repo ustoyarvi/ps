@@ -23,9 +23,9 @@ int	main(int ac, char **av)
 		exit (1 && write(2, "Error\n", 6));
 	max_index = init_a(av, &a);
 	make_indexes_for_struct(a);
-	max_index = list_lenght(a) - 1;
+	max_index = list_length(a) - 1;
 	b = NULL;
-	if (corner_case(a, max_index))
+	if (already_sorted(a, max_index))
 		return (0);
 	tmp = clone_struct(a);
 	if (if_close_to_sorted(tmp, max_index, 0, max_index))

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   corner_case.c                                      :+:      :+:    :+:   */
+/*   cases.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	corner_case(t_s *a, int index)
+int	already_sorted(t_s *a, int index)
 {
 	t_s	*tmp;
 	int	i;

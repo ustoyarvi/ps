@@ -17,7 +17,7 @@ SRC = push_swap.c \
 	  algorithms.c \
 	  algorithms2.c \
 	  butterfly.c \
-	  almost_sorted.c \
+	  cases.c \
 	  low_num.c
 
 OBJS = $(SRC:.c=.o)
