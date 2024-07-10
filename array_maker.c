@@ -33,7 +33,7 @@ void	do_bubble_sort_array(int *arr, t_s *a)
 	int	i;
 	int	tmp;
 
-	len = list_lenght(a);
+	len = list_length(a);
 	while (--len)
 	{
 		i = 0;
@@ -58,7 +58,7 @@ int	*make_array(t_s *a)
 	int	i;
 
 	i = 0;
-	len = list_lenght(a);
+	len = list_length(a);
 	array = malloc(sizeof(int) * len);
 	tmp = a;
 	while (tmp)
@@ -76,15 +76,15 @@ void	make_indexes_for_struct(t_s *a)
 	t_s	*tmp;
 	int	*arr;
 	int	i;
-	int	len;
+	int	l;
 
-	len = list_lenght(a);
+	l = list_length(a);
 	arr = make_array(a);
 	tmp = a;
 	while (a)
 	{
 		i = 0;
-		while (i < len)
+		while (i < l)
 		{
 			if (arr[i] == a->num)
 			{

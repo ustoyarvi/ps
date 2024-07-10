@@ -6,60 +6,49 @@
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 23:20:44 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/03/01 00:22:28 by dsedlets         ###   ########.fr       */
+/*   Updated: 2024/07/09 18:56:48 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
- * '\v' - вертикальная табуляция
- * '\f' - перевод формата
- * '\r' - возврат каретки
- */
 
 #include "../libft.h"
 
-static int	is_space(char c)
+static int	space(int c)
 {
-	return (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\v' || c == '\f' || c == '\r');
-}
-
-int	ft_atoi(const char *str)
-{
-	int	num;
-	int	sign;
-
-	sign = 1;
-	num = 0;
-	while (is_space(*str))
-		str++;
-	if (*str == '-')
-	{
-		sign *= -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		num *= 10;
-		num += *str - '0';
-		str++;
-	}
-	return (num * sign);
-}
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(void)
-{
-	char *a = "   -465";
-	int b;
-	int	c;
-
-	b = ft_atoi(a);
-	c = atoi(a);
-	printf("%d\n", b);
-	printf("%d\n", c);
+	if ((c >= 9 && c <= 14) || (c == 32))
+		return (1);
 	return (0);
-}*/
+}
+
+static int	digit(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(const char *str, int *overflow)
+{
+	long int		n;
+	long int		check;
+	int				sign;
+
+	n = 0;
+	sign = 1;
+	while (*str && space(*str))
+		str++;
+	if (*str == 45 || *str == 43)
+	{
+		if (*str == 45)
+			sign *= -1;
+		str++;
+	}
+	while (*str && digit(*str))
+	{
+		check = INT_MIN;
+		n = n * 10 + sign * (*str - 48);
+		if ((n > 2147483647) || (n < check))
+			*overflow = 1;
+		str++;
+	}
+	return (n);
+}
