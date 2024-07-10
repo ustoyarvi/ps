@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 	int	max_index;
 
 	if (ac == 1 || (ac == 2 && !av[1][0]))
-		exit (1 && write(2, "Error\n", 6));
+		exit (1 && write(2, "Error_BAD_ARGUMENTS\n", 21));
 	max_index = init_a(av, &a);
 	make_indexes_for_struct(a);
 	max_index = list_length(a) - 1;

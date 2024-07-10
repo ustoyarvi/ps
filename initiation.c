@@ -22,7 +22,9 @@ int	if_valid(char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			exit (1 && write(2, "Error\n", 6));
+		{
+			exit (1 && write(2, "Error\n", 7));
+		}
 		i++;
 	}
 	return (1);
@@ -33,7 +35,7 @@ int	uniq(int n, t_s *a)
 	while (a)
 	{
 		if (a->num == n)
-			exit (1 && write(2, "Error\n", 6));
+			exit (1 && write(2, "Error = uniq\n", 14));
 		a = a->next;
 	}
 	return (1);
@@ -52,7 +54,7 @@ int	try_add(char *current_str, t_s **a)
 		if (uniq(num, *a))
 		{
 			if (overflow)
-				exit (1 && write(2, "Error\n", 6));
+				exit (1 && write(2, "Error = overflow\n", 18));
 			if (!overflow)
 			{
 				new_node = ft_lstnew(num);
@@ -72,7 +74,7 @@ int	init_a(char **av, t_s **a)
 	int		j;
 	char	**current_array;
 
-	i = 0;
+	i = 1;
 	if (!av[1])
 		return (0);
 	while (av[i])
